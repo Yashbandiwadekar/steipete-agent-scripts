@@ -1565,6 +1565,7 @@ mac_release_prepare_codesign_keychain() {
   probe_path="$probe_dir/probe"
   cp /usr/bin/true "$probe_path"
   canary_rc=0
+  HOME="$(mac_release_login_home)" \
   mac_release_run_with_timeout "${MAC_RELEASE_CODESIGN_CANARY_TIMEOUT:-30}" \
     codesign --force --timestamp=none --keychain "$keychain" --sign "$identity" "$probe_path" ||
     canary_rc=$?
