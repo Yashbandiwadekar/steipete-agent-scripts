@@ -6,6 +6,8 @@ summary: Timeline of guardrail helper changes mirrored from Sweetistics and rela
 
 ## Unreleased
 
+- Fixed false missing-asset errors when verifying macOS releases with long asset lists.
+
 - Route intentional Team restarts through one coordinator session on Stable, preserving explicit deployment approval and holding restarts while the coordinator is unidentified or unavailable.
 
 - Require Peter's explicit approval for each Team server deployment and keep automatic deployment disabled, preserving scoped incident repair without an automatic follow-up upgrade.

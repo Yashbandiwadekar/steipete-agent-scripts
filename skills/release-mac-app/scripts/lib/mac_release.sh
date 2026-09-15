@@ -1129,7 +1129,8 @@ check_assets() {
       MARKETING_VERSION="$asset_version"
       pattern=$(mac_release_expand "$pattern")
       MARKETING_VERSION="$old_marketing_version"
-      if ! printf "%s\n" "$assets" | grep -Eq "$pattern"; then
+      # Drain the list: grep -q can SIGPIPE printf and fail a match under pipefail.
+      if ! printf "%s\n" "$assets" | grep -E "$pattern" >/dev/null; then
         echo "ERROR: extra asset missing on release $tag: $pattern" >&2
         missing=1
       fi
