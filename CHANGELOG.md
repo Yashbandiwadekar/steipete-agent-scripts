@@ -6,6 +6,8 @@ summary: Timeline of guardrail helper changes mirrored from Sweetistics and rela
 
 ## Unreleased
 
+- Guard Xcode installs with bounded Git/Python smoke checks and selected-bundle rollback; require a Git host preflight before Codex workers and document the stable-Xcode workaround.
+
 - Fixed false missing-asset errors when verifying macOS releases with long asset lists.
 
 - Route intentional Team restarts through one coordinator session on Stable, preserving explicit deployment approval and holding restarts while the coordinator is unidentified or unavailable.

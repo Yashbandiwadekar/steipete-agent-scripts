@@ -93,6 +93,8 @@ Portfolio/multi-repo work: `$maintainer-orchestrator` instead.
 
 ## Invoke
 
+- Host preflight: run `timeout 8 git --version`; if it hangs on a Mac with Xcode-beta selected, export `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer` in the session and every work order.
+
 Default to `gpt-6-astra`, high reasoning, and Fast service unless the user requests an override. Pass all three explicitly on fresh and resumed workers. Keep the configured provider, worker execution policy, and specialized review isolation with their owning workflows.
 
 If the saved configuration selects the `openai_api_direct` million-token route, run `ruby ~/.codex/skills/agent-scripts/codex-huge-context/scripts/preflight.rb` before the first fresh or resumed launch in the batch. Fail closed if it cannot deliver the Keychain credential; never work around it by overriding the provider or using ordinary Codex authentication.

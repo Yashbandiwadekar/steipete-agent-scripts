@@ -42,6 +42,9 @@ jobs:
       - name: Test ClawSweeper status helper
         run: skills/clawsweeper-status/scripts/clawsweeper-status.test.sh
 
+      - name: Test Xcode CLI smoke and rollback (synthetic)
+        run: /bin/bash skills/xcode-sync/scripts/xcode-post-install-smoke.test.sh
+
       - name: Test npm helpers (offline, synthetic)
         run: |
           test_home="$(mktemp -d)"
